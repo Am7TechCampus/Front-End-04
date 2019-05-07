@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+          
+    <title>Scroll 04</title>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <style type="text/css">
+
+        p{
+            
+            width:100px;
+            margin:auto 0;
+            text-align: center;
+            font: bold 34px sans-serif;
+            background: #f0e68c;
+            position: fixed;
+            top:50px;
+            display: none;
+        }
+        .dummy-conent{
+            
+            height:600px;
+            font: 34px sans-serif;
+            text-align: center;
+        }
+    </style>
+    
+    <!-- JQuery -->
+   
+    
+    
+</head>
+<body>
+   
+   
+    
+    <p id="scroll2">Scroll Happened!</p>
+        <div class="dummy-conent">Scroll the viewport</div>
+        <div class="dummy-conent">Scroll the viewport</div>
+        <div class="dummy-conent">Scroll the viewport</div>
+        <div class="dummy-conent">Scroll the viewport</div>
+        <div class="dummy-conent">Scroll the viewport</div>
+    
+    
+    
+    <script type="text/javascript">
+
+    $(document).ready(function(){
+       
+         $(window).scroll(function(){
+            $("p").show().fadeOut("slow"); 
+             
+         });
+        
+    });
+    </script>
+    
+</body>
+</html>

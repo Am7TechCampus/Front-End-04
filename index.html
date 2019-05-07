@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+          
+    <title>Front-End 04</title>
+    
+    <style>
+        #slideUp{
+            
+            padding:20px;
+            font:20px sans-serif;
+            background: khaki;
+        }#slideDown{
+            
+            padding:20px;
+            font:20px sans-serif;
+            background: khaki;
+        }#slideLeft{
+            
+            padding:20px;
+            font:20px sans-serif;
+            background: khaki;
+        }
+        p{
+            
+            padding:15px;
+            background:#F0E68c;
+        }
+        #text{
+            
+            width:200px;
+            padding: 40px 0;
+            font: bold 24px sans-serif;
+            text-align: center;
+            background: #cbd8cb;
+            border: 1px solid #63a063;
+            box-sizing:border-box;
+        }
+    </style>
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    
+    <script>
+     $(document).ready(function(){
+        $("#hide").click(function(){
+            
+            $("#Test").hide();
+        });
+         
+        $("#show").click(function(){
+            
+            $("#Test").show();
+        });
+         
+         $("#animate").click(function(){
+             
+           $("div").animate({left:'250px'});  
+             
+         });
+         
+          $("#reanimate").click(function(){
+             
+           $("div").animate({left:'8px'});  
+             
+         });
+         
+       $(function(){
+            
+            $("h2").css("color","#0088ff");
+           $("h2").css("background","khaki",).slideUp(300).delay(800).fadeIn(400);
+        });
+         
+         $("#slideUp").dblclick(function(){
+             $(this).slideUp();
+             
+         });
+         
+         $("#slideDown").click(function(){
+             $(this).slideUp();
+             
+         });
+         
+          
+         
+          $("#slideLeft").click(function(){
+             $(this).slideToggle();
+             
+         });
+         
+        
+    });
+        
+    $(document).ready(function(){
+       
+         $(window).scroll(function(){
+            ("#scroll").show().fadeOut("slow"); 
+             
+         });
+        
+    });
+    </script>
+</head>
+<body>
+    <h2>TechCampus Exercise</h2>
+    <p>Please input a number between 1 and 10:</p>
+    <input id="numb">
+    <button type="button" onclick="myFunction()">Submit</button>
+    <p id="demo"></p>
+    <hr>
+    <br>
+    <p>JQuery Course</p>
+    <p id="Test">How to write JQuery Code.</p>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <br>
+    <hr>
+    <br>
+    <p id="text">Python Full-Stack Course</p>
+    <button type="button" class="start">Star</button>
+    <button type="button" class="reset">Reset</button>
+    <br>
+    <hr>
+    <div id="slideUp-Text">
+        <p id="slideUp">Click here to slideUp text</p>
+        <p id="slideDown">Click here to slideDown text</p>
+        <p id="slideLeft">Click here to slideLeft text</p>
+    </div>
+    
+    <hr>
+         
+    <button type="button" class="toggle-btn">Toggle Paragraphs</button>
+    <p class="very-fast">This paragraph will show/hide with very fast speed </p>
+    <p class="normal">this paragraph will show/hide with default speed</p>
+    <p class="fast">this paragraph will show/hide with fast speed</p>
+    <p class="slow">this paragraph will show/hide with slow speed</p>
+    <p class="very-slow">this paragraph will show/hide with very slow speed</p>
+    <br>
+    <hr>
+    <button id="animate">Start Animation</button>
+    <button id="reanimate">Re-Start Animation</button>
+    <p>Tech Campus - Animation</p>
+    <div style="background: #98bf21;height:100px;width:100px;position: absolute;"></div>
+    
+    
+    <script>
+     
+        
+    function myFunction ()
+        {
+            
+            
+            var x, text;
+            // get the value of the input field with id="numb" .
+            
+            x = document.getElementById("numb").value;
+            
+            // if x  is not a number or less than 1 or greater than 10.
+            if(isNaN(x) || x < 1 || x > 10) {
+                
+                text = "Input not valid 👎";
+            }
+            else {
+                
+                text = "Input Ok 👍";
+            }
+            
+            document.getElementById("demo").innerHTML = text;
+        }
+    
+   
+    </script>
+    
+    
+
+        
+    <script>
+        $(document).ready(function(){
+            
+        $(".toggle-btn").click(function(){
+            
+            $("p.normal").toggle();
+            $("p.fast").toggle("fast");
+            $("p.slow").toggle("slow");
+            $("p.very-fast").toggle(50);
+            $("p.very-slow").toggle(2000);
+        });
+   
+    
+    $(".start").click(function(){
+        $("#text")
+            .animate({width:"100%"})
+            .animate({fontSize:"40px"})
+            .animate({borderWidth:30});
+        
+    });
+        $(".reset").click(function(){
+            
+            $("#text").removeAttr("style");
+        });
+    
+     });
+    </script>
+    
+    
+</body>
+</html>
